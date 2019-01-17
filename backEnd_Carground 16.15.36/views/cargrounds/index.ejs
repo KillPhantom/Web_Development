@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+    <header class ='jumbotron'>
+        <div class ="container">
+            <h1>Welcom to Our Secret ground</h1>
+            <p>Add our precious memory below</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href = "/cargrounds/new" >Go add new memory!</a>
+            </p>
+        </div>
+    </header>
+
+    
+    <div class="row text-center" >
+        <% carground.forEach(function(carground){ %>
+            <div class="col-sm-4 p-3">
+             <div class="card " style="width: 16rem;">
+                <img class="card-img-top" src="<%= carground.image %>" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title"><%= carground.name %></h4>
+                    <a href="/cargrounds/<%= carground._id%>" class="btn btn-info">More Info!!</a>
+                </div>
+            </div>
+            </div>
+        <%  }) %>
+    </div>
+    
+
+</div>
+<% include ../partials/footer %>
